@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/suplementos.js"></script>
+    <script src="js/nuevosuplemento.js"></script>
+    <script src="js/funciones.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm" style="background-color: #4B0082;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;">
+          <img src="img/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button type="button" class="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target="#myModal">
+              Cerrar Sesion
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <a href="index.html"><img src="img/back.png" alt="Regresar" /></a>
+
+    <button id="nuevoRegistro" onclick="activaNuevo();">
+      Registrar Suplemento
+    </button>
+    <!--Aqui se mostraran mensajes para el usuario-->
+    <div id="mensajes"></div>
+
+    <!--Aqui se mostrara el listado de datos-->
+    <div id="listado"></div>
+
+    <!--Aqui aparecera un formulario para crear nuevos suplementos-->
+    <div id="nuevo">
+        <h3>Registrar Suplemento</h3>
+            <input type="text" id="reference" placeholder="Referencia" onkeydown="upperCaseF(this)">
+            <br><br>
+            <input type="text" id="brand" placeholder="Marca" onkeydown="upperCaseF(this)">
+            <br><br>
+            <input type="text" id="category" placeholder="Categoría" onkeydown="upperCaseF(this)">
+            <br><br>
+            <textarea id="objetivo" placeholder="Objetivo" rows="4" cols="50"  onkeydown="upperCaseF(this)"></textarea>
+            <br><br>
+            <textarea id="description" placeholder="Descripción" rows="4" cols="50"  onkeydown="upperCaseF(this)"></textarea>
+            <br><br>
+            <select id="availability" placeholder="availability">
+                <option value="true">SI</option>    
+                <option value="false">NO</option>
+            </select>
+            <br><br>
+            <input type="number" id="price" placeholder="Precio">
+            <br><br>
+            <input type="number" id="quantity" placeholder="Cantidad">
+            <br><br>
+            <input type="text" id="photography" placeholder="Imagen" onkeydown="upperCaseF(this)">
+            <br><br>
+            <button onclick="registrar();">Guardar</button>
+            <button onclick="estadoInicial();">Cancelar</button>
+    </div>
+
+    <!--Aqui aparecera un formulario para modificar nuevos suplementos-->
+    <div id="editar">Sección editar suplemento</div>
+
+    <!--Aqui aparecera una secciòn para preguntar al usuario si desea eliminar el suplementos-->
+    <div id="eliminar">Sección eliminar suplemento</div>
+  </body>
+</html>

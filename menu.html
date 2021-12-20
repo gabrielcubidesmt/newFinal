@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/menuStyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <title>ANDRES | MENU</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm" style="background-color: #4B0082;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;">
+        <img src="img/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button type="button" class="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target="#myModal">
+            Cerrar Sesion
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-5 text-white text-center" style="background-color: #000066;">
+    <h1>Bienvenido</h1> 
+  </div>
+  
+  <div class="container bg-light mt-5">
+  <div class="container">
+
+    <div class="row">
+      <div id="col-md-6">
+        <table class="table table-dark table-hover">
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Perfil</th>
+            <th>Terminar</th>
+          </tr>
+          <tr>
+            <td id="userName"></td>
+            <td id="userEmail"></td>
+            <td id="userType"></td>
+            <td><a id="cerrarSession" href="#">Cerrar Sessión</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <h2>Opciones disponibles</h2>
+
+    <p>Selecciona un modo de vista.</p>
+    
+    <div id="btnContainer">
+      <button class="btn active" onclick="listView()"><i class="fa fa-bars"></i> Lista</button> 
+      <button class="btn " onclick="gridView()"><i class="fa fa-th-large"></i> Cuadricula</button>
+    </div>
+    <br>
+  
+   <!-- OPCIONES PARA EL ASESOR --> 
+   <div id="opcionesAsesor">
+      <div class="row">
+        <div class="column" style="background-color:#000099; color: whitesmoke;">
+          <h2>Registrar Ordenes</h2>
+          <p><a href="ordenes.html" class="btn btn-outline-warning" style="color: whitesmoke;">Procesar Ordenes</a></p>
+        </div>
+        <div class="column" style="background-color:#0033cc; color: whitesmoke;">
+          <h2>Ordenes de pedido registradas por el asesor comercial</h2>
+          <p><a href="ordenasesor.html" class="btn btn-outline-warning" style="color: whitesmoke;">Listar Ordenes</a></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="column" style="background-color:#0099ff; color: whitesmoke;">
+          <h2>Listado de Ordenes</h2>
+          <p><a href="ordenesfecha.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Ordenes x fecha</a></p>
+          <p><a href="ordenesestado.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Ordenes x estado</a></p>
+        </div>
+        <div class="column" style="background-color:#33ccff; color: whitesmoke;">
+          <h2>Cumpleaños</h2>
+          <p><a href="birthdaymonth.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Cumpleaños</a></p>
+        </div>
+      </div>
+    </div>  
+
+   <!-- OPCIONES ADMINISTRADOR --> 
+    <div id="opcionesAdm">
+      <div class="row">
+        <div class="column" style="background-color:#0033cc; color: whitesmoke;">
+          <h2>Administración de Usuarios</h2>
+          <p><a href="usuarios.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Usuarios</a></p>
+        </div>
+        <div class="column" style="background-color:#33ccff; color: whitesmoke;" >
+          <h2>Administración de Suplementos</h2>
+          <p><a href="productos.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Suplementos</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPCIONES COORDINADOR-->
+    <div id="opcionesCoord">
+      <div class="row">
+        <div class="column" style="background-color:#0033cc; color: whitesmoke;">
+          <h2>Aprobar/Rechazar Ordenes de pedido de sus fuerza de ventas</h2>
+          <p><a href="ordeneszona.html" class="btn btn-outline-warning" style="color: whitesmoke;">Actualizar Ordenes</a></p>
+        </div>
+        <div class="column" style="background-color:#33ccff; color: whitesmoke;">
+          <h2>Listado de ordenes de pedido por estado</h2>
+          <p><a href="birthdaymonth.html" class="btn btn-outline-warning" style="color: whitesmoke;">Lista de Cumpleaños</a></p>
+        </div>
+      </div>
+    </div>      
+
+
+
+   <!--  <div id="opcionesAsesor" class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Registrar Ordenes
+            </p>
+            <ul>
+              <li><a href="ordenes.html" class="card-link">Procesar Ordenes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Ordenes de pedido registradas por el asesor comercial
+            </p>
+            <ul>
+              <li><a href="ordenasesor.html" class="card-link">Listar Ordenes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Listado de ordenes de pedido por fecha
+            </p>
+            <ul>
+              <li><a href="ordenesfecha.html" class="card-link">Lista de Ordenes x fecha</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Listado de ordenes de pedido por estado
+            </p>
+            <ul>
+              <li><a href="ordenesestado.html" class="card-link">Lista de Ordenes x estado</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Cumpleaños
+            </p>
+            <ul>
+              <li><a href="birthdaymonth.html" class="card-link">Lista de Cumpleaños</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="opcionesAdm" class="row">
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Administración de Usuarios
+            </p>
+            <ul>
+              <li><a href="usuarios.html" class="card-link">Lista de Usuarios</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Administración de Suplementos
+            </p>
+            <ul>
+              <li><a href="productos.html" class="card-link">Lista de Suplementos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="opcionesCoord" class="row">
+      <div class="col-md-12">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Aprobar/Rechazar Ordenes de pedido de sus fuerza de ventas
+            </p>
+            <ul>
+              <li><a href="ordeneszona.html" class="card-link">Actualizar Ordenes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <p class="card-text">
+              Listado de ordenes de pedido por estado
+            </p>
+            <ul>
+              <li><a href="birthdaymonth.html" class="card-link">Lista de Cumpleaños</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/menu/menu.js"></script>
+
+  <script>
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+    
+    // Declare a loop variable
+    var i;
+    
+    // List View
+    function listView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "100%";
+      }
+    }
+    
+    // Grid View
+    function gridView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "50%";
+      }
+    }
+    
+    /* Optional: Add active class to the current button (highlight it) */
+    var container = document.getElementById("btnContainer");
+    var btns = container.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+</body>
+
+</html>
